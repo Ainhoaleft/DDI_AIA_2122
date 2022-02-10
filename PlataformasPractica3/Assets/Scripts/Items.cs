@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Items : MonoBehaviour
 {
-    //[SerializeField] AudioClip sonido;
+    [SerializeField] AudioClip sonido;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +20,7 @@ public class Items : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collison)
     {
         FindObjectOfType<GameController>().SendMessage("AnotarItemRecogido");
-        //AudioSource.PlayClipAtPoint(sonido,Camera.main.transform.position);
+        AudioSource.PlayClipAtPoint(sonido, transform.position);
         Destroy(gameObject);
     }
 }

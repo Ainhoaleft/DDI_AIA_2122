@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
     private float xInicial, yInicial;
     [SerializeField] float velocidad = 5f;
-    //Animator anim;
+    private Animator anim;
 
     private float alturaPersonaje;
     // Start is called before the first frame update
@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
         xInicial = transform.position.x;
         yInicial = transform.position.y;
         alturaPersonaje = GetComponent<Collider2D>().bounds.size.y;
-        //anim = gameObject.GetComponent<Animator>();
+        anim = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -24,7 +24,8 @@ public class Player : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
 
         if ((horizontal > 0.1f) || (horizontal < -0.1f))
-            //anim.Play("PersonajeCorriendo");
+            
+            anim.Play("Corriendo");
         
             transform.Translate(
                 horizontal * velocidad * Time.deltaTime,
@@ -44,8 +45,9 @@ public class Player : MonoBehaviour
 
                 if (tocandoElSuelo)
                 {
-                    Vector3 fuerzaSalto = new Vector3(0,8,0);
+                    Vector3 fuerzaSalto = new Vector3(0,5,0);
                     GetComponent<Rigidbody2D>().AddForce(fuerzaSalto);
+                    anim.Play("Saltando");
                 }
                 
             }

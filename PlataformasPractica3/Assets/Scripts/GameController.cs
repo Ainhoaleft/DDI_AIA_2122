@@ -13,6 +13,10 @@ public class GameController : MonoBehaviour
     private int nivelActual;
     
     [SerializeField] private UnityEngine.UI.Text textoGameOver;
+    public UnityEngine.UI.Text textoVida;
+    public UnityEngine.UI.Text textoItem;
+    public UnityEngine.UI.Text textoNivel;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +30,7 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.M))
+        if (Input.GetKeyDown(KeyCode.N))
         {
             AvanzarNivel();
         }
@@ -36,6 +40,7 @@ public class GameController : MonoBehaviour
     {
         puntos = FindObjectOfType<GameStatus>().puntos = puntos;
         puntos += 100;
+        textoItem.text = "Puntos: " + puntos.ToString();
         Debug.Log("Puntos: " + puntos);
 
         itemsRestantes--;
@@ -52,6 +57,7 @@ public class GameController : MonoBehaviour
         vidas = FindObjectOfType<GameStatus>().vidas = vidas; 
         vidas--;
         FindObjectOfType<Player>().SendMessage("Recolocar");
+        textoVida.text = "Vidas: " + vidas.ToString();
         Debug.Log("Vidas: " + vidas);
         if (vidas <= 0 )
         {
@@ -80,8 +86,10 @@ public class GameController : MonoBehaviour
         SceneManager.LoadScene("Nivel" + nivelActual);*/
         //SceneManager.LoadScene("Nivel2" );
         if(SceneManager.sceneCountInBuildSettings == 1)
-            Debug.Log("Fin del juego");
+            Debug.Log("Fin");
         SceneManager.LoadScene("Nivel2");
+        //SceneManager.LoadScene("Menu");
+        textoNivel.text = "Nivel: " + nivelActual.ToString();
         itemsRestantes = 0;
     }
 }
