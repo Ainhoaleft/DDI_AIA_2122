@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Ainhoa Izquierdo Arenas
 public class GameStatus : MonoBehaviour
 {
     public int puntos = 0;
     public int vidas = 3;
     public int nivelActual = 1;
-    public int nivelMasAlto = 2;
+    public int nivelMasAlto = 1;
 
     public void Awake()
     {
@@ -24,6 +25,10 @@ public class GameStatus : MonoBehaviour
     void Start()
     {
         
+    }
+    public void LevelUp()
+    {
+        nivelActual++;
     }
 
     // Update is called once per frame

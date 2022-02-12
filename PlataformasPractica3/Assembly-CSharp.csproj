@@ -53,9 +53,11 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\GameStatus.cs" />
+     <Compile Include="Assets\Scripts\Llave.cs" />
      <Compile Include="Assets\Scripts\ColisionInferior.cs" />
      <Compile Include="Assets\Scripts\Items.cs" />
      <Compile Include="Assets\Scripts\Enemigo.cs" />
+     <Compile Include="Assets\Scripts\Puerta.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\Escena.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />

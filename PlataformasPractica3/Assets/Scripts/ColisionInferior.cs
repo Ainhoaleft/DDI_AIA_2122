@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Ainhoa Izquierdo Arenas
+
 public class ColisionInferior : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -16,8 +18,10 @@ public class ColisionInferior : MonoBehaviour
         
     }
     
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         FindObjectOfType<Player>().SendMessage("Recolocar");
+        if(collision.gameObject.CompareTag("Player"))
+                    FindObjectOfType<GameController>().PerderVida();
     }
 }

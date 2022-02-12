@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Ainhoa Izquierdo Arenas
 public class Player : MonoBehaviour
 {
     private float xInicial, yInicial;
@@ -9,6 +10,7 @@ public class Player : MonoBehaviour
     private Animator anim;
 
     private float alturaPersonaje;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +27,13 @@ public class Player : MonoBehaviour
 
         if ((horizontal > 0.1f) || (horizontal < -0.1f))
             
-            anim.Play("Corriendo");
+            if(horizontal < 0)
+                GetComponent<SpriteRenderer>().flipX = true;
+            else
+            {
+                GetComponent<SpriteRenderer>().flipX = false;
+            }
+        anim.Play("Corriendo");
         
             transform.Translate(
                 horizontal * velocidad * Time.deltaTime,
@@ -45,7 +53,7 @@ public class Player : MonoBehaviour
 
                 if (tocandoElSuelo)
                 {
-                    Vector3 fuerzaSalto = new Vector3(0,5,0);
+                    Vector3 fuerzaSalto = new Vector3(0,20,0);
                     GetComponent<Rigidbody2D>().AddForce(fuerzaSalto);
                     anim.Play("Saltando");
                 }

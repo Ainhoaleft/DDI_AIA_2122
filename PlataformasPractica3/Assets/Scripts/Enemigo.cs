@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Ainhoa Izquierdo Arenas
+
 public class Enemigo : MonoBehaviour
 {
     [SerializeField] private List<Transform> wayPoints;

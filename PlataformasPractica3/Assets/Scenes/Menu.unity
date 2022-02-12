@@ -493,7 +493,7 @@ RectTransform:
   m_GameObject: {fileID: 789458179}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 383734385}
   m_Father: {fileID: 1877959963}
@@ -622,7 +622,7 @@ GameObject:
   - component: {fileID: 842948216}
   - component: {fileID: 842948215}
   m_Layer: 5
-  m_Name: Text (1)
+  m_Name: TextoNombre
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -803,7 +803,7 @@ GameObject:
   - component: {fileID: 1912858729}
   - component: {fileID: 1912858728}
   m_Layer: 5
-  m_Name: Text
+  m_Name: TextoInicial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -850,18 +850,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 40
+    m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 40
+    m_MaxSize: 50
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Plataformas 2d
+  m_Text: Plataformas 2D
 --- !u!222 &1912858729
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//Ainhoa Izquierdo Arenas
+
 public class Escena : MonoBehaviour
 {
     // Start is called before the first frame update
