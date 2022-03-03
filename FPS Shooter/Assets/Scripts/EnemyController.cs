@@ -20,6 +20,7 @@ public class EnemyController : MonoBehaviour
     public GameObject bullet;
     public Transform firePoint;
 
+    //Tiempo de disparo
     public float fireRate, waitBetweenShots = 2f, timeToShoot = 1f;
     private float fireCount, shotWaitCounter, shootTimeCounter;
 
@@ -39,9 +40,11 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         targetPoint = PlayerController.instance.transform.position;
         targetPoint.y = transform.position.y;
-
+        
+        //movimiento inteligente
         if(!chasing)
         {
             if(Vector3.Distance(transform.position, targetPoint) < distanceToChase)
