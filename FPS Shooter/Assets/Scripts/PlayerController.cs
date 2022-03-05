@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Ainhoa Izquierdo Arenas
+
 public class PlayerController : MonoBehaviour
 {
     public static PlayerController instance;
@@ -68,9 +70,7 @@ public class PlayerController : MonoBehaviour
     {
         if(!UIController.instance.pauseScreen.activeInHierarchy && !GameManager.instance.levelEnding)
         {
-        //moveInput.x = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
-        //moveInput.z = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
-
+            
         //guardar Y velocity
         float yStore = moveInput.y;
 
@@ -100,8 +100,6 @@ public class PlayerController : MonoBehaviour
             moveInput.y = Physics.gravity.y * gravityModifier * Time.deltaTime;
         }
 
-        //canJump = Physics.OverlapSphere(groundCheckPoint.position, .25f, whatIsGround).Length > 0;
-
         canJump = charCon.isGrounded;
 
         if (canJump)
@@ -126,6 +124,7 @@ public class PlayerController : MonoBehaviour
             AudioManager.instance.PlaySFX(8);
         }
 
+        //Plataforma de salto
         if(bounce)
         {
                 bounce = false;
@@ -197,6 +196,7 @@ public class PlayerController : MonoBehaviour
             SwitchGun();
         }
 
+        //Click derecho
         if(Input.GetMouseButtonDown(1))
         {
             CameraController.instance.ZoomIn(activeGun.zoomAmount);
@@ -220,6 +220,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //Disparo
     public void FireShot()
     {
         if(activeGun.currentAmmo > 0)
@@ -237,6 +238,7 @@ public class PlayerController : MonoBehaviour
         
     }
 
+    //La lista de armas
     public void SwitchGun()
     {
         activeGun.gameObject.SetActive(false);
@@ -256,6 +258,7 @@ public class PlayerController : MonoBehaviour
         firePoint.position = activeGun.firePoint.position;
     }
 
+    //Nueva arma cuando cojamos el pick up
     public void AddGun(string gunToAdd)
     {
         bool gunUnlocked = false;
@@ -281,6 +284,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //Plataforma de salto
     public void Bounce(float bounceForce)
     {
         bounceAmount = bounceForce;

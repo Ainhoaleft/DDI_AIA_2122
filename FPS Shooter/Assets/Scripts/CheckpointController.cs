@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//Ainhoa Izquierdo Arenas
+
 public class CheckpointController : MonoBehaviour
 {
     public string cpName;
 
+    //Donde carga el jugador en el checkpoint
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +29,8 @@ public class CheckpointController : MonoBehaviour
     {
 
     }
-
+    
+    //Cunado toca el checkpoint
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Player")

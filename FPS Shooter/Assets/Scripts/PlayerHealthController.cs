@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Ainhoa Izquierdo Arenas
+
 public class PlayerHealthController : MonoBehaviour
 {
     public static PlayerHealthController instance;
@@ -15,6 +17,7 @@ public class PlayerHealthController : MonoBehaviour
         instance = this;
     }
 
+    //Actual vida = máxima vida
     private void Start()
     {
         currentHealth = maxHealth;
@@ -33,6 +36,7 @@ public class PlayerHealthController : MonoBehaviour
         }
     }
 
+    //Metodo cuando dañan al jugador restará vida
     public void DamagePlayer(int damageAmount)
     {
         if(invincCounter <= 0 && !GameManager.instance.levelEnding)
@@ -64,6 +68,7 @@ public class PlayerHealthController : MonoBehaviour
         
     }
 
+    //La vida del jugador
     public void HealPlayer(int healAmount)
     {
         currentHealth += healAmount;

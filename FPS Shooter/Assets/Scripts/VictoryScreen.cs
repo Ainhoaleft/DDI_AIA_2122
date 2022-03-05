@@ -4,6 +4,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+//Ainhoa Izquierdo Arenas
+
+//La escena de la victoria
+
 public class VictoryScreen : MonoBehaviour
 {
     public string mainMenuScene;

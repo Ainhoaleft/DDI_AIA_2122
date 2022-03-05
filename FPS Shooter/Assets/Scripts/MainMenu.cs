@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//Ainhoa Izquierdo Arenas
+
 public class MainMenu : MonoBehaviour
 {
     public string firstLevel;
@@ -26,14 +28,17 @@ public class MainMenu : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    { 
         
     }
+    
+    //Boton de Continuar
     public void Continue()
     {
         SceneManager.LoadScene(PlayerPrefs.GetString("CurrentLevel"));
     }
 
+    //Boton del empezar
     public void PlayGame()
     {
         SceneManager.LoadScene(firstLevel);
@@ -45,6 +50,7 @@ public class MainMenu : MonoBehaviour
         Time.timeScale = 1f;
     }
 
+    //Boton de Finalizar
     public void QuitGame()
     {
         Application.Quit();

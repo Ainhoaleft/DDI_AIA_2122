@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Ainhoa Izquierdo Arenas
+
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
@@ -10,6 +12,7 @@ public class AudioManager : MonoBehaviour
 
     public AudioSource[] soundEffects;
 
+    //Instanciamos
     private void Awake()
     {
         instance = this;
@@ -25,7 +28,7 @@ public class AudioManager : MonoBehaviour
     {
         
     }
-
+    //Background Music
     public void StopBGM()
     {
         bgm.Stop();

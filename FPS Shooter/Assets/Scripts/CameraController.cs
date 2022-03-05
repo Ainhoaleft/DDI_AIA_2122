@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Ainhoa Izquierdo Arenas
+
 public class CameraController : MonoBehaviour
 {
     public static CameraController instance;
@@ -14,11 +16,12 @@ public class CameraController : MonoBehaviour
 
     public Camera theCam;
 
+    //Instanciamos
     private void Awake()
     {
         instance = this;
     }
-
+    
     void Start()
     {
         startFOV = theCam.fieldOfView;
@@ -32,7 +35,8 @@ public class CameraController : MonoBehaviour
 
         theCam.fieldOfView = Mathf.Lerp(theCam.fieldOfView, targetFOV, zoomSpeed * Time.deltaTime);
     }
-
+    
+    //Cuando le damos a click derecho y haze zoom la camara
     public void ZoomIn(float newZoom)
     {
         targetFOV = newZoom;

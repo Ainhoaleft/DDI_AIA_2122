@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Ainhoa Izquierdo Arenas
+
 public class Turret : MonoBehaviour
 {
     public GameObject bullet;
@@ -13,6 +15,7 @@ public class Turret : MonoBehaviour
 
     public float rotateSpeed = 1f;
 
+    //Dispara, espera unos segundos
     void Start()
     {
         shotCounter = timeBetweenShots;
@@ -24,6 +27,7 @@ public class Turret : MonoBehaviour
         {
             if (Vector3.Distance(transform.position, PlayerController.instance.transform.position) < rangeToTargetPlayer)
             {
+                
                 gun.LookAt(PlayerController.instance.transform.position + new Vector3(0f, 1.2f, 0f));
 
                 shotCounter -= Time.deltaTime;
@@ -37,7 +41,7 @@ public class Turret : MonoBehaviour
             else
             {
                 shotCounter = timeBetweenShots;
-
+                //Rotación de la torreta
                 gun.rotation = Quaternion.Lerp(gun.rotation, Quaternion.Euler(0f, gun.rotation.eulerAngles.y + 10f, 0f), rotateSpeed * Time.deltaTime);
             }
         }

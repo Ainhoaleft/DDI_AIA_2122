@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//Ainhoa Izquierdo Arenas
+
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
@@ -19,11 +21,12 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        //Cursos del ratón
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
 
-    
+    //Cunado le das al escape se pausa el juego
     void Update()
     {
         if(Input.GetButtonDown("Pause"))
@@ -32,6 +35,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //Carga la escena actual cuando muere el jugador
     public void PlayerDied()
     {
         StartCoroutine("PlayerDiedCo");
@@ -44,6 +48,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    //La escena de pausa
     public void PauseUnpause()
     {
         if(UIController.instance.pauseScreen.activeInHierarchy)
@@ -63,7 +68,7 @@ public class GameManager : MonoBehaviour
 
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-
+            // Los objetos dejara de moverse
             Time.timeScale = 0f;
 
             PlayerController.instance.footstepSlow.Stop();

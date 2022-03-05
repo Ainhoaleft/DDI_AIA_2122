@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Ainhoa Izquierdo Arenas
+
 public class Gun : MonoBehaviour
 {
     public GameObject bullet;
@@ -33,6 +35,8 @@ public class Gun : MonoBehaviour
         }
     }
 
+    
+    //Se actualizará en el texto cuando disparamos balas 
     public void GetAmmo()
     {
         currentAmmo += pickupAmount;

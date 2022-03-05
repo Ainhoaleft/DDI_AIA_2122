@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//Ainhoa Izquierdo Arenas
+
 public class PauseScreen : MonoBehaviour
 {
     public string mainMenuScene;
@@ -18,6 +20,7 @@ public class PauseScreen : MonoBehaviour
         
     }
 
+    //Pausa
     public void Resume()
     {
         GameManager.instance.PauseUnpause();

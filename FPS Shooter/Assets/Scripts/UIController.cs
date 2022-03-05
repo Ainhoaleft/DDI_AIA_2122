@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//Ainhoa Izquierdo Arenas
+
 public class UIController : MonoBehaviour
 {
     public static UIController instance;
@@ -25,6 +27,8 @@ public class UIController : MonoBehaviour
     }
 
     // Update is called once per frame
+    
+    //Cambio de colores
     void Update()
     {
         if(damageEffect.color.a != 0)

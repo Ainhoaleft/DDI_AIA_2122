@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//Ainhoa Izquierdo Arenas
+
 public class LevelExit : MonoBehaviour
 {
 
@@ -10,6 +12,7 @@ public class LevelExit : MonoBehaviour
 
     public float waitToEndLevel;
 
+    //Cunado toque el portal pasa de nivel
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
@@ -20,8 +23,8 @@ public class LevelExit : MonoBehaviour
 
             AudioManager.instance.PlayLevelVictory();
         }
-    }
-
+    } 
+    //Reinicia los checkpoint al pasar de nivel
     IEnumerator EndLevelCo()
     {
         PlayerPrefs.SetString(nextLevel + "_cp", "");

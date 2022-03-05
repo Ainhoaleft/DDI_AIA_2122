@@ -4,6 +4,8 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
 
+//Ainhoa Izquierdo Arenas
+
 public class EnemyController : MonoBehaviour
 {
 
@@ -44,7 +46,7 @@ public class EnemyController : MonoBehaviour
         targetPoint = PlayerController.instance.transform.position;
         targetPoint.y = transform.position.y;
         
-        //movimiento inteligente
+        //Movimiento inteligente del enemigo
         if(!chasing)
         {
             if(Vector3.Distance(transform.position, targetPoint) < distanceToChase)
@@ -121,7 +123,7 @@ public class EnemyController : MonoBehaviour
 
                             firePoint.LookAt(PlayerController.instance.transform.position + new Vector3(0f, 1.2f, 0f));
 
-                            // chequear angulo del jugador
+                            //Chequear angulo del jugador
                             Vector3 targetDir = PlayerController.instance.transform.position - transform.position;
                             float angle = Vector3.SignedAngle(targetDir, transform.forward, Vector3.up);
 
@@ -157,6 +159,7 @@ public class EnemyController : MonoBehaviour
         
     }
 
+    //Metodo del enemigo cuando disparemos en su rango nos persiga
     public void GetShot()
     {
         wasShot = true;

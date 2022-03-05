@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
 
+//Ainhoa Izquierdo Arenas
+
 public class BulletController : MonoBehaviour
 {
     public float moveSpeed, lifeTime;
@@ -31,20 +33,22 @@ public class BulletController : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
+    
+    //Si le toca al enemigo daña
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Enemy" && damageEnemy)
         {
             other.gameObject.GetComponent<EnemyHealthController>().DamageEnemy(damage);
         }
-
+        //si le damos a la cabeza está muerto
         if (other.gameObject.tag == "Headshot" && damageEnemy)
         {
             other.transform.parent.GetComponent<EnemyHealthController>().DamageEnemy(damage * 2);
             Debug.Log("Headshot");
         }
-
+        
+        //Si le toca la jugador se daña
         if (other.gameObject.tag == "Player" && damagePlayer)
         {
             //Debug.Log("Hit player at " + transform.position);
